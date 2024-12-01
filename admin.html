@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Forex Signals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>Admin Dashboard</h2>
+        <form id="signal-form">
+            <label for="pair">Currency Pair:</label>
+            <input type="text" id="pair" required>
+            
+            <label for="sl">Stop Loss (SL):</label>
+            <input type="number" step="0.0001" id="sl" required>
+            
+            <label for="tp">Take Profit (TP):</label>
+            <input type="number" step="0.0001" id="tp" required>
+            
+            <label for="type">Signal Type:</label>
+            <select id="type">
+                <option value="buy">Buy</option>
+                <option value="sell">Sell</option>
+            </select>
+            
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="active">Active</option>
+                <option value="closed">Closed</option>
+                <option value="expired">Expired</option>
+            </select>
+
+            <label for="expiry">Valid Duration (minutes):</label>
+            <input type="number" id="expiry" required>
+
+            <button type="submit">Add Signal</button>
+        </form>
+
+        <div id="signals-list">
+            <h3>Current Signals</h3>
+            <div id="signal-cards"></div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+
